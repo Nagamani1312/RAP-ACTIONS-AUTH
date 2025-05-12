@@ -1,0 +1,39 @@
+managed implementation in class ZBP_R_NM_TABLETMG unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_NM_TABLETMG alias Student
+persistent table ZNM_TABLE
+draft table ZNM_TABLE_DTMG
+
+lock master total etag LastChangedAt
+authorization master( global, instance )
+etag master LocalLastChangedAt
+
+{
+//  field ( mandatory : create )
+//   Studentid;
+
+  field ( readonly )
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( numbering : managed, readonly  )  Studentid;
+
+
+action( features : instance, authorization : update ) setAdmitted result [1] $self;
+factory action copyStudent[1];
+static factory action createInstance[1];
+
+  create;
+  update;
+  delete;
+  draft action Resume;
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+
+}

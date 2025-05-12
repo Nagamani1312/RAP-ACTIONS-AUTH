@@ -1,0 +1,231 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'Studentid'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'Studentid'
+annotate view ZC_NM_TABLETMG with
+{
+  @EndUserText.label: 'Studentid'
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'Studentid'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , type : #FOR_ACTION, dataAction: 'copyStudent', label: 'Copy student'
+
+  },
+  {
+    position: 20 , type : #FOR_ACTION, dataAction: 'createInstance', label: 'Add student'
+
+  },
+  {  label: 'Studentid',position: 10 } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+// @Consumption.filter.defaultValue: '1'
+//@Consumption.filter.defaultValueHigh: '3' 
+  Studentid;
+  
+  @EndUserText.label: 'Firstname'
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Firstname'
+  } ]
+  
+  
+  @UI.lineItem: [
+//   {
+//    position: 10 , type : #FOR_ACTION, dataAction: 'copyStudent', label: 'Copy student'
+//
+//  },
+//  {
+//    position: 20 , type : #FOR_ACTION, dataAction: 'createInstance', label: 'Add student'
+//
+//  },
+  {  label: 'Firstname',position: 20 } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+ 
+  Firstname;
+  
+  @EndUserText.label: 'Lastname'
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Lastname'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 , 
+    label: 'Lastname'
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  Lastname;
+  
+  @EndUserText.label: 'Age'
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'Age'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 , 
+    label: 'Age'
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  Age;
+  
+  @EndUserText.label: 'Course'
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'Course'
+  } ]
+  @UI.lineItem: [ {
+    position: 50 , 
+    label: 'Course'
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+   @Consumption.valueHelpDefinition: [{ entity:{ name:'ZI_COURSE_RAP', element: 'Value' },
+     distinctValues: true
+      }]
+      
+    @Consumption.filter.hierarchyBinding: [ {
+    type: #ELEMENT,
+    value: 'Gender'
+  } ]
+  
+   
+     //@Consumption.filter.mandatory: true
+  Course;
+  
+  @EndUserText.label: 'Courseduration'
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'Courseduration'
+  } ]
+  @UI.lineItem: [ {
+    position: 60 , 
+    label: 'Courseduration'
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+   @Consumption.filter.hierarchyBinding: [ {
+    type: #CONSTANT,
+    value: '4'
+  } ]
+  Courseduration;
+  
+  @EndUserText.label: 'Status'
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'Status'
+  },
+  {type: #FOR_ACTION, dataAction: 'setAdmitted', label: 'Set Admitted' }  ]
+  @UI.lineItem: [ {
+    position: 70 , 
+    label: 'Status'
+  },
+  {type: #FOR_ACTION, dataAction: 'setAdmitted', label: 'Set Admitted' }  ]
+ 
+  
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  Status;
+  
+  @EndUserText.label: 'Gender'
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'Gender'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 , 
+    label: 'Gender'
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  //@Consumption.filter.defaultValue: 'F'
+  Gender;
+  
+  @EndUserText.label: 'Dob'
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'Dob'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 , 
+    label: 'Dob'
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  Dob;
+  //@Consumption.filter.hidden: true
+  @UI.identification: [ {
+    position: 100 
+  } ]
+  @UI.lineItem: [ {
+    position: 100 
+  } ]
+  @UI.selectionField: [ {
+    position: 100 
+  } ]
+  LocalCreatedBy;
+  @Consumption.filter.hidden: true
+  @UI.identification: [ {
+    position: 110 
+  } ]
+  @UI.lineItem: [ {
+    position: 110 
+  } ]
+  @UI.selectionField: [ {
+    position: 110 
+  } ]
+  LocalCreatedAt;
+  @Consumption.filter.hidden: true
+  @UI.identification: [ {
+    position: 120 
+  } ]
+  @UI.lineItem: [ {
+    position: 120 
+  } ]
+  @UI.selectionField: [ {
+    position: 120 
+  } ]
+  LocalLastChangedBy;
+  @Consumption.filter.hidden: true
+  @UI.identification: [ {
+    position: 130 
+  } ]
+  @UI.lineItem: [ {
+    position: 130 
+  } ]
+  @UI.selectionField: [ {
+    position: 130 
+  } ]
+  LocalLastChangedAt;
+  @Consumption.filter.hidden: true
+  @UI.identification: [ {
+    position: 140 
+  } ]
+  @UI.lineItem: [ {
+    position: 140 
+  } ]
+  @UI.selectionField: [ {
+    position: 140 
+  } ]
+  LastChangedAt;
+}

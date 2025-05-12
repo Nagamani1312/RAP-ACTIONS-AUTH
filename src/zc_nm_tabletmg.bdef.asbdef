@@ -1,0 +1,19 @@
+projection implementation in class ZBP_C_NM_TABLETMG unique;
+strict ( 2 );
+use draft;
+define behavior for ZC_NM_TABLETMG alias Student
+use etag
+
+{
+  use create;
+  use update;
+  use delete;
+  use action setAdmitted;
+  use action copyStudent;
+  use action createInstance;
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+}

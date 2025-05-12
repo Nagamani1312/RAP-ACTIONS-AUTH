@@ -1,0 +1,12 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_NM_TABLETMG'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_NM_TABLETMG'
+  }
+}
+define service ZUI_NM_TABLE_O4TMG
+  provider contracts odata_v4_ui {
+  expose ZC_NM_TABLETMG as Student;
+}
